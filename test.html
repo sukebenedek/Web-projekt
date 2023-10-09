@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Az út vége szervpiac</title>
+    <style>
+
+@keyframes motorcycle_move {
+    0% {
+        left: 640px;
+        transform: scaleX(1);
+    }
+    25% {
+        left: 870px;
+        transform: scaleX(1);
+    }
+    50% {
+        left: 870px;
+        transform: scaleX(-1);
+    }
+    75% {
+        left: 640px;
+        transform: scaleX(-1);
+    }
+    100% {
+        left: 640px;
+        transform: scaleX(1);
+    }
+}
+
+
+
+.div {
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+    animation: motorcycle_move 10s linear infinite;
+}
+
+    </style>
+</head>
+<body>
+        <div>adsasd</div>
+     
+     
+</body>
+<script>
+    // Get all the "Read More" buttons and additional content sections
+var readMoreButtons = document.querySelectorAll('.read-more-button');
+var additionalContent = document.querySelectorAll('.additional-content');
+
+// Add a click event listener to each button
+readMoreButtons.forEach(function(button, index) {
+    button.addEventListener('click', function() {
+        // Toggle the visibility of the corresponding additional content section
+        if (additionalContent[index].style.display === 'none' || additionalContent[index].style.display === '') {
+            additionalContent[index].style.display = 'block';
+            button.textContent = 'Read Less';
+        } else {
+            additionalContent[index].style.display = 'none';
+            button.textContent = 'Read More';
+        }
+    });
+});
+
+</script>
+</html>
