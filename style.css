@@ -4,19 +4,12 @@ body {
     background-image: url(img/background.png);
 }
 
-.navbar {
-    width: 100%;
-    background-color: pink;
-    padding: 0;
-    padding-bottom: 10px;
-}
-
 nav {
     width: 1100px;
-    background-color: pink;
+    background-color: rgb(255, 71, 157);
     margin: auto;
     overflow-y: hidden;
-
+    z-index: 1;
 }
 
 nav h1 {
@@ -25,7 +18,6 @@ nav h1 {
     padding: 0;
     font-size: 35px;
     margin-top: 5px;
-
 }
 
 nav ul {
@@ -33,27 +25,26 @@ nav ul {
     padding: 0;
     list-style-type: none;
     float: right;
-
+    
 }
 
 nav ul li {
     float: left;
     margin-top: 15px;
-
+    
 }
 
 nav ul li a {
     text-decoration: none;
     color: red;
-    padding: 0 40px;
+    padding: 0 20px;
     font-size: 25px;
-    transition: color 0.3s ease;
     text-shadow: 1px 1px 1px black;
-
+    transition: color 0.3s forwards;
 }
 
 nav ul li a:hover {
-    color: rgb(158, 24, 15);
+    animation: colorCh 1s infinite;
 }
 
 nav img {
@@ -66,12 +57,24 @@ nav img {
 }
 
 hr {
-    border: 2px solid rgb(207, 10, 19);
+    border: 2px solid rgb(247, 20, 31);
     border-radius: 100px;
+}
+
+.navbar {
+    width: 100%;
+    background-color: rgb(255, 71, 157);
+    padding: 0;
+    padding-bottom: 10px;
+    position: fixed;
 }
 
 .additional-content {
     display: none;
+}
+
+.read-more-section {
+    padding: 10px;
 }
 
 .read-more-button {
@@ -87,30 +90,36 @@ hr {
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: background-color 0.3s ease;
-    margin-left: 30px;
-    margin-bottom: 5px;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .read-more-button:hover {
     background-color: rgb(192, 29, 18);
 }
 
-
 .container {
     width: 1100px;
-    background-color: rgb(255, 71, 157);
+    background-color: pink;
     margin: auto;
-    margin-top: -16px;
 }
 
 .container h1 {
-    margin-top: 15px;
     padding-top: 5px;
+    margin-top: 10px;
     text-align: center;
-    color: rgb(207, 10, 19);
+    color: rgb(247, 20, 31);
     text-shadow: 2px 2px 4px black;
     font-size: 37px;
     margin-bottom: 5px;
+}
+
+.center:hover h1 {
+    animation: colorChange 1s forwards;
 }
 
 .container p {
@@ -125,10 +134,15 @@ hr {
     justify-content: center;
 }
 
+.center:hover hr {
+    animation: widthChange 1s forwards;
+    border: 4px solid ;
+}
+
+
 .center {
     width: 220px;
 }
-
 
 .siren-text {
     color: black;
@@ -155,10 +169,227 @@ hr {
     padding-left: 20px;
 }
 
-.container ul p {
+.container ul p , .container ol p{
     padding-left: 0px;
     text-decoration: underline;
     font-size: 17px;
+}
+
+.worker {
+    background-color: rgb(255, 41, 141);
+    margin-bottom: 20px;
+    border-radius: 15px;
+    border: 2px solid rgb(192, 29, 18);
+    width: 45%;
+}
+
+.worker p, .worker h3, .worker h4 {
+    text-align: center;
+}
+
+.worker img {
+    text-align: center;
+    margin-top: 10px;
+    border-radius: 100px;
+    border: 2px solid rgb(192, 29, 18);
+}
+
+.worker img:hover {
+    border-radius: 20px;
+    border: 2px solid rgb(158, 24, 15);
+    transition: border-radius 0.7s ease-in-out, border 0.7s ease-in-out;
+}
+
+.worker h3 {
+    font-size: 25px;
+}
+
+.worker h4 {
+    font-size: 18px;
+}
+
+.workerImg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.worker img {
+    width: 400px;
+}
+
+.workers {
+    display: flex;
+    justify-content: center;
+}
+
+footer {
+    background-color: rgb(255, 71, 157);
+    margin-bottom: -16px;
+    padding-bottom: 1px;
+    text-align: center;
+    margin-top: -20px;
+}
+
+footer h3, footer p {
+    transition: color 0.3s ease-in-out;
+}
+
+footer h3:hover, footer p:hover {
+    color: rgb(207, 207, 207);
+}
+
+.rotate:hover {
+    animation: rotate 2s 1;
+}
+
+.gradient:hover {
+    animation: gradient 1s ease-in-out;
+}
+
+.shake:hover {
+    animation: shake 1s ease-in-out;
+}
+
+.matrix:hover {
+    animation: matrix 0.5s cubic-bezier(0.36, 2.59, 0.58, 1);
+}
+
+#card {
+    border-radius: 20px;
+    width: 650px;
+    margin-top: 15px;
+}
+
+#card-img {
+    border-radius: 20px;
+    width: 600px;
+    margin-top: 20px;
+}
+
+#card-img:hover {
+    animation: flipOver 1s ease-in-out;
+}
+
+.worker:hover h3 {
+    transition: all 2s ease-in-out;
+    text-shadow: 1px 1px 2px yellow;
+}
+
+@keyframes flipOver {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rotate {
+    0%{
+        transform: rotate(0deg);
+    }
+    25%{
+        transform: rotate(45deg);
+    }
+    75%{
+        transform: rotate(-45deg);
+    }
+}
+
+@keyframes gradient {
+    0%{
+        transform: skew(0deg,0deg);
+    }
+    25%{
+        transform: skew(0deg,10deg);
+    }
+    75%{
+        transform: skew(0deg,-10deg);
+    }
+}
+
+@keyframes colorCh {
+    0%, 100%{
+        color: rgb(158, 24, 15);
+    }
+    50% {
+        color: red;
+    }
+} 
+
+@keyframes shake {
+    0% {
+        transform: perspective(100px) rotateX(0deg);
+    }
+    25% {
+        transform: perspective(100px) rotateX(-10deg);
+    }
+    50% {
+        transform: perspective(100px) rotateX(0deg);
+    }
+    75% {
+        transform: perspective(100px) rotateX(10deg);
+    }
+    100% {
+        transform: perspective(100px) rotateX(0deg);
+    }
+}
+
+@keyframes matrix {
+    0% {
+        transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+    }
+    10% {
+        transform: matrix3d(0.9, 0, 0, 0, 0, 1.1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+    }
+    20% {
+        transform: matrix3d(1.1, 0, 0, 0, 0, 0.9, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+    }
+    30% {
+        transform: matrix3d(0.9, 0, 0, 0, 0, 1.1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+    }
+    40% {
+        transform: matrix3d(1.1, 0, 0, 0, 0, 0.9, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+    }
+    50% {
+        transform: matrix3d(0.9, 0, 0, 0, 0, 1.1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+    }
+    60% {
+        transform: matrix3d(1.1, 0, 0, 0, 0, 0.9, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+    }
+    70% {
+        transform: matrix3d(0.9, 0, 0, 0, 0, 1.1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+    }
+    80% {
+        transform: matrix3d(1.1, 0, 0, 0, 0, 0.9, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+    }
+    90% {
+        transform: matrix3d(0.9, 0, 0, 0, 0, 1.1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+    }
+    100% {
+        transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+    }
+}
+
+@keyframes widthChange {
+    from {
+      width: 220px;
+      border: 2px solid rgb(247, 20, 31);
+    }
+    to {
+      width: 100px;
+      border: 2px solid rgb(172, 19, 19);
+    }
+  }
+  
+@keyframes colorChange {
+  from {
+    color: rgb(247, 20, 31);
+  }
+  to {
+    color:rgb(172, 19, 19);
+  }
 }
 
 @keyframes siren {
@@ -179,11 +410,11 @@ hr {
         transform: scaleX(-1);
     }
     35% {
-        left: 1030px;
+        left: 1080px;
         transform: scaleX(-1);
     }
     50% {
-        left: 1030px;
+        left: 1080px;
         transform: scaleX(1);
     }
     85% {
@@ -196,9 +427,73 @@ hr {
     }
 }
 
-
 @media screen and (max-width: 700px) {
     nav {
         width: 100%;
     }
 }
+
+@-webkit-keyframes hvr-bob {
+    0% {
+      -webkit-transform: translateY(-8px);
+      transform: translateY(-8px);
+    }
+    50% {
+      -webkit-transform: translateY(-4px);
+      transform: translateY(-4px);
+    }
+    100% {
+      -webkit-transform: translateY(-8px);
+      transform: translateY(-8px);
+    }
+  }
+  @keyframes hvr-bob {
+    0% {
+      -webkit-transform: translateY(-8px);
+      transform: translateY(-8px);
+    }
+    50% {
+      -webkit-transform: translateY(-4px);
+      transform: translateY(-4px);
+    }
+    100% {
+      -webkit-transform: translateY(-8px);
+      transform: translateY(-8px);
+    }
+  }
+  @-webkit-keyframes hvr-bob-float {
+    100% {
+      -webkit-transform: translateY(-8px);
+      transform: translateY(-8px);
+    }
+  }
+  @keyframes hvr-bob-float {
+    100% {
+      -webkit-transform: translateY(-8px);
+      transform: translateY(-8px);
+    }
+  }
+  .hvr-bob {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  }
+  .hvr-bob:hover, .hvr-bob:focus, .hvr-bob:active {
+    -webkit-animation-name: hvr-bob-float, hvr-bob;
+    animation-name: hvr-bob-float, hvr-bob;
+    -webkit-animation-duration: .3s, 1.5s;
+    animation-duration: .3s, 1.5s;
+    -webkit-animation-delay: 0s, .3s;
+    animation-delay: 0s, .3s;
+    -webkit-animation-timing-function: ease-out, ease-in-out;
+    animation-timing-function: ease-out, ease-in-out;
+    -webkit-animation-iteration-count: 1, infinite;
+    animation-iteration-count: 1, infinite;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    -webkit-animation-direction: normal, alternate;
+    animation-direction: normal, alternate;
+  }
+
